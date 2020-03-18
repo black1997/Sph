@@ -165,8 +165,8 @@ static NSString * const checkUpdateInBgKey = @"checkUpdateInBg";
     }
     NSMutableURLRequest *mutableRequest = [[self request] mutableCopy];
     [NSURLProtocol setProperty:@YES forKey:URLProtocolAlreadyHandleKey inRequest:mutableRequest];
-    if (![DbManager sharedAdapter].useMockData) {
-        NSData *mockData = [[DbManager sharedAdapter] getMockDta];
+    if ([DbManager sharedAdapter].useMockData) {
+        NSData *mockData = [[DbManager sharedAdapter] getMockDta:mutableRequest.URL.absoluteString];
         [self.client URLProtocol:self didLoadData:mockData];
         [self.client URLProtocolDidFinishLoading:self];
     }else{

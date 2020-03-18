@@ -44,6 +44,8 @@
 		D3994A3024222956002C46AE /* sphProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D3994A2F24222956002C46AE /* sphProtocol.m */; };
 		D3994A3224223EA1002C46AE /* MockData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3994A3124223EA1002C46AE /* MockData.plist */; };
 		D3994A3324223EA1002C46AE /* MockData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3994A3124223EA1002C46AE /* MockData.plist */; };
+		D3994A36242247A3002C46AE /* MockDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3994A35242247A3002C46AE /* MockDataManager.m */; };
+		D3994A37242247A3002C46AE /* MockDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3994A35242247A3002C46AE /* MockDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,8 @@
 		D3994A2E24222956002C46AE /* sphProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sphProtocol.h; sourceTree = "<group>"; };
 		D3994A2F24222956002C46AE /* sphProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sphProtocol.m; sourceTree = "<group>"; };
 		D3994A3124223EA1002C46AE /* MockData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MockData.plist; sourceTree = "<group>"; };
+		D3994A34242247A3002C46AE /* MockDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockDataManager.h; sourceTree = "<group>"; };
+		D3994A35242247A3002C46AE /* MockDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +343,8 @@
 				D3994A2E24222956002C46AE /* sphProtocol.h */,
 				D3994A2F24222956002C46AE /* sphProtocol.m */,
 				D3994A3124223EA1002C46AE /* MockData.plist */,
+				D3994A34242247A3002C46AE /* MockDataManager.h */,
+				D3994A35242247A3002C46AE /* MockDataManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3994A36242247A3002C46AE /* MockDataManager.m in Sources */,
 				D362D25A2410F58F0056CAB3 /* MASConstraint.m in Sources */,
 				D362D1CB2410EDDC0056CAB3 /* ViewController.m in Sources */,
 				D362D276241116E40056CAB3 /* FMResultSet.m in Sources */,
@@ -513,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D362D1E02410EDEE0056CAB3 /* SphTests.m in Sources */,
+				D3994A37242247A3002C46AE /* MockDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

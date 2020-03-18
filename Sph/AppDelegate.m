@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "sphProtocol.h"
+#import "MockDataManager.h"
 @interface AppDelegate ()
 
 @end
@@ -18,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [NSURLProtocol registerClass:[sphProtocol class]];
-    
+    [[MockDataManager sharedAdapter] start];
     return YES;
 }
 

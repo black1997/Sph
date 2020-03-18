@@ -23,8 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray *)getLocalData;
 
 - (NSDictionary *)getMockDataForNSDictionary;
-
-- (NSData *)getMockDta;
+/*
+ * 实际开发使用配置文件、在配置文件中添加接口地址和对应mock数据
+ */
+- (NSData *)getMockDta:(NSString *)path;
 @end
 
 NS_ASSUME_NONNULL_END
