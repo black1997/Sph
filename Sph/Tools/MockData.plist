@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>success</key>
+	<integer>1</integer>
+	<key>result</key>
+	<dict>
+		<key>records</key>
+		<array>
+			<dict>
+				<key>volume_of_mobile_data</key>
+				<string>16.47121</string>
+				<key>quarter</key>
+				<string>2018-Q1</string>
+				<key>_id</key>
+				<string>1</string>
+			</dict>
+			<dict>
+				<key>volume_of_mobile_data</key>
+				<string>18.47368</string>
+				<key>quarter</key>
+				<string>2018-Q2</string>
+				<key>_id</key>
+				<string>2</string>
+			</dict>
+			<dict>
+				<key>volume_of_mobile_data</key>
+				<string>19.97554729</string>
+				<key>quarter</key>
+				<string>2018-Q3</string>
+				<key>_id</key>
+				<string>3</string>
+			</dict>
+			<dict>
+				<key>volume_of_mobile_data</key>
+				<string>20.43921113</string>
+				<key>quarter</key>
+				<string>2018-Q4</string>
+				<key>_id</key>
+				<string>3</string>
+			</dict>
+		</array>
+	</dict>
+	<key>help</key>
+	<string>https://data.gov.sg/api/3/action/help_show?name=datastore_search</string>
+</dict>
+</plist>

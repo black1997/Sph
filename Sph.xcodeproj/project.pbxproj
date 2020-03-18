@@ -41,6 +41,9 @@
 		D362D275241116E40056CAB3 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D362D26F241116E40056CAB3 /* FMDatabasePool.m */; };
 		D362D276241116E40056CAB3 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D362D270241116E40056CAB3 /* FMResultSet.m */; };
 		D362D27B2411173E0056CAB3 /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D362D27A2411173E0056CAB3 /* DbManager.m */; };
+		D3994A3024222956002C46AE /* sphProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D3994A2F24222956002C46AE /* sphProtocol.m */; };
+		D3994A3224223EA1002C46AE /* MockData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3994A3124223EA1002C46AE /* MockData.plist */; };
+		D3994A3324223EA1002C46AE /* MockData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3994A3124223EA1002C46AE /* MockData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +140,9 @@
 		D362D270241116E40056CAB3 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		D362D2792411173E0056CAB3 /* DbManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbManager.h; sourceTree = "<group>"; };
 		D362D27A2411173E0056CAB3 /* DbManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
+		D3994A2E24222956002C46AE /* sphProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sphProtocol.h; sourceTree = "<group>"; };
+		D3994A2F24222956002C46AE /* sphProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sphProtocol.m; sourceTree = "<group>"; };
+		D3994A3124223EA1002C46AE /* MockData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MockData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +336,9 @@
 			children = (
 				D362D2792411173E0056CAB3 /* DbManager.h */,
 				D362D27A2411173E0056CAB3 /* DbManager.m */,
+				D3994A2E24222956002C46AE /* sphProtocol.h */,
+				D3994A2F24222956002C46AE /* sphProtocol.m */,
+				D3994A3124223EA1002C46AE /* MockData.plist */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -437,6 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3994A3224223EA1002C46AE /* MockData.plist in Resources */,
 				D362D1D32410EDEE0056CAB3 /* LaunchScreen.storyboard in Resources */,
 				D362D1D02410EDEE0056CAB3 /* Assets.xcassets in Resources */,
 				D362D1CE2410EDDC0056CAB3 /* Main.storyboard in Resources */,
@@ -447,6 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3994A3324223EA1002C46AE /* MockData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +496,7 @@
 				D362D274241116E40056CAB3 /* FMDatabase.m in Sources */,
 				D362D2542410F58F0056CAB3 /* ViewController+MASAdditions.m in Sources */,
 				D362D1C82410EDDC0056CAB3 /* SceneDelegate.m in Sources */,
+				D3994A3024222956002C46AE /* sphProtocol.m in Sources */,
 				D362D2552410F58F0056CAB3 /* MASCompositeConstraint.m in Sources */,
 				D362D272241116E40056CAB3 /* FMDatabaseQueue.m in Sources */,
 				D362D2582410F58F0056CAB3 /* NSArray+MASAdditions.m in Sources */,

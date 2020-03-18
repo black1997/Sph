@@ -15,10 +15,16 @@ NS_ASSUME_NONNULL_BEGIN
 /*单利模式*/
 + (DbManager *)sharedAdapter;
 
+@property (nonatomic,assign)BOOL useMockData;
+
 /*保存数据*/
 - (BOOL)saveData:(NSArray*)data;
 
 - (NSArray *)getLocalData;
+
+- (NSDictionary *)getMockDataForNSDictionary;
+
+- (NSData *)getMockDta;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -21,6 +21,7 @@ static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _DbManager = [[DbManager alloc]init];
         [_DbManager openDB];
+        _DbManager.useMockData = YES;
     });
     return _DbManager;
 }
@@ -65,7 +66,7 @@ static dispatch_once_t onceToken;
                     NSLog(@"db事务插入成功");
                 }
             }else{
-                NSLog(@"数据已存在");
+//                NSLog(@"数据已存在");
             }
         }];
     } @catch (NSException *exception) {
@@ -106,5 +107,27 @@ static dispatch_once_t onceToken;
     }
     [_db close];
     return [[NSArray alloc]initWithArray:dataArray];
+}
+
+
+- (NSDictionary *)getMockDataForNSDictionary {
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"MockData" ofType:@"plist"];
+    NSDictionary * mock = [[NSDictionary alloc]initWithContentsOfFile:file];
+    return mock;
+}
+
+
+- (NSData *)getMockDta {
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"MockData" ofType:@"plist"];
+    NSDictionary * mock = [[NSDictionary alloc]initWithContentsOfFile:file];
+    if (mock.count && mock.allKeys.count) {
+        NSError *error;
+        NSData * data = [NSJSONSerialization dataWithJSONObject:mock options:NSJSONWritingPrettyPrinted error:&error];
+        if (!error) {
+            return data;
+        }
+        return nil;
+    }
+    return nil;
 }
 @end

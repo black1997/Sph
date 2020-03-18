@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "sphProtocol.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [NSURLProtocol registerClass:[sphProtocol class]];
+    
     return YES;
 }
 

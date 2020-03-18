@@ -12,7 +12,7 @@
 #import "showSelectYears.h"
 #import "MBProgressHUD.h"
 #import "DbManager.h"
-
+#import "sphProtocol.h"
 
 static NSString *cellid = @"cellId";
 
@@ -89,7 +89,10 @@ static NSString *cellid = @"cellId";
 
 #pragma mark - getdata
 - (void)getTheWebData {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    //指定其protocolClasses
+    configuration.protocolClasses = @[[sphProtocol class]];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:configuration];
     NSString *url = @"https://data.gov.sg/api/action/datastore_search?resource_id=a807b7ab-6cad-4aa6-87d0-e283a7353a0f";
     __weak typeof(self) weakSelf = self;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
