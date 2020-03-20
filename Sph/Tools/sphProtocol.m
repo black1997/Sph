@@ -165,13 +165,7 @@ static NSString * const checkUpdateInBgKey = @"checkUpdateInBg";
     }
     NSMutableURLRequest *mutableRequest = [[self request] mutableCopy];
     [NSURLProtocol setProperty:@YES forKey:URLProtocolAlreadyHandleKey inRequest:mutableRequest];
-    if ([DbManager sharedAdapter].useMockData) {
-        NSData *mockData = [[DbManager sharedAdapter] getMockDta:mutableRequest.URL.absoluteString];
-        [self.client URLProtocol:self didLoadData:mockData];
-        [self.client URLProtocolDidFinishLoading:self];
-    }else{
-        [self netRequestWithRequest:mutableRequest];
-    }
+    [self netRequestWithRequest:mutableRequest];
 }
 
 - (void)stopLoading{
@@ -213,6 +207,23 @@ static NSString * const checkUpdateInBgKey = @"checkUpdateInBg";
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
     if (error) {
+        if (!self.data) {
+            NSData *mockData = [[DbManager sharedAdapter] getMockDta:task.originalRequest.URL.absoluteString];
+            if (mockData) {
+                self.data = [mockData mutableCopy];
+                NSURLResponse *resp = [[NSURLResponse alloc]initWithURL:task.originalRequest.URL MIMEType:@"text/json" expectedContentLength:self.data.length textEncodingName:@""];
+                self.response = resp;
+                [self.client URLProtocol:self didReceiveResponse:resp cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+                [self.client URLProtocol:self didLoadData:self.data];
+                [self.client URLProtocolDidFinishLoading:self];
+                NSCachedURLResponse *cacheUrlResponse = [[NSCachedURLResponse alloc] initWithResponse:resp data:self.data];
+                [[NSURLCache sharedURLCache] storeCachedResponse:cacheUrlResponse forRequest:self.request];
+                self.data = nil;
+                return;
+            }else{
+                NSLog(@"请配置mock数据");
+            }
+        }
         [self.client URLProtocol:self didFailWithError:error];
     } else {
         [self.client URLProtocolDidFinishLoading:self];
